@@ -1,0 +1,121 @@
+.heroBanner {
+  padding: 4rem 0;
+  text-align: center; /* Akan di-override oleh flex jika perlu */
+  position: relative;
+  overflow: hidden;
+  /* Warna utama hero diatur melalui variabel CSS Docusaurus atau fallback.
+     Ini penting untuk background-blend-mode pada ::before. */
+  background-color: var(
+    --ifm-hero-background-color,
+    #282c34
+  ); /* Contoh fallback color */
+  flex-grow: 1; /* Full height */
+  /* background-image dan background-blend-mode dipindahkan ke ::before */
+}
+
+/* Pseudo-elemen untuk background yang bisa dianimasikan dan dimiringkan */
+.heroBanner::before {
+  --scroll-duration: 15s;
+
+  content: '';
+  position: absolute;
+  /* Dibuat lebih besar dan digeser untuk mengakomodasi rotasi tanpa memperlihatkan tepi.
+     Nilai ini mungkin perlu disesuaikan tergantung sudut rotasi dan aspek rasio gambar. */
+  top: -50%; /* Contoh: geser ke atas sebesar 25% dari tinggi .heroBanner */
+  left: -50%; /* Contoh: geser ke kiri sebesar 25% dari lebar .heroBanner */
+  width: 250%; /* Contoh: lebar 2.5x dari .heroBanner */
+  height: 200%; /* Contoh: tinggi 1.5x dari .heroBanner */
+  z-index: 0; /* Di belakang konten heroBanner */
+  background-image: url('../../static/img/bully-art-comic-background.jpg');
+  /* Ukuran satu tile gambar. Jika ::before width 250%, maka 40% dari itu adalah 100% viewport width.
+     'auto' menjaga aspek rasio. Sesuaikan 40% ini jika gambar Anda memiliki aspek rasio yang sangat berbeda
+     atau jika Anda ingin tile gambar tampak lebih besar/kecil relatif terhadap viewport. */
+  background-size: 40% auto;
+  background-repeat: repeat; /* Ulangi di kedua sumbu untuk scrolling diagonal yang mulus */
+  transform-origin: center center; /* Titik asal transformasi di tengah untuk rotasi yang lebih intuitif */
+  will-change: transform; /* Optimasi performa animasi */
+  /* Durasi animasi dasar untuk mobile/tablet (default) */
+  animation: scrollDiagonalFromTopRight var(--scroll-duration) linear infinite;
+  opacity: 0.15; /* Atur transparansi sesuai kebutuhan */
+}
+
+.heroContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around; /* Distribusi ruang antara teks dan logo */
+  flex-wrap: wrap-reverse; /* Logo akan pindah ke atas pada layar kecil jika diinginkan, atau gunakan wrap biasa */
+  position: relative; /* Diperlukan agar z-index bekerja jika kita tidak menggunakan z-index: -1 pada ::before */
+  z-index: 1; /* Memastikan konten berada di atas pseudo-elemen ::before */
+}
+
+.heroText {
+  max-width: 600px; /* Batasi lebar blok teks */
+  text-align: left; /* Teks rata kiri */
+  padding: 1rem; /* Beri sedikit padding */
+  order: 1; /* Teks di kiri */
+}
+
+.heroImageContainer {
+  padding: 1rem; /* Beri sedikit padding */
+  order: 2; /* Logo di kanan */
+}
+
+.heroLogo {
+  min-width: 150px; /* Ukuran minimum logo */
+  width: 100%;
+  max-width: 250px; /* Sesuaikan ukuran logo sesuai keinginan */
+  height: auto;
+  display: block;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Tombol rata kiri mengikuti teks */
+  margin-top: 2rem;
+}
+
+/* Media query untuk tampilan mobile, jika ingin logo di atas teks */
+@media (max-width: 996px) {
+  /* Docusaurus's lg breakpoint */
+  .heroContainer {
+    flex-direction: column-reverse; /* Logo di atas, teks di bawah */
+  }
+  .heroText {
+    text-align: center; /* Teks jadi rata tengah di mobile */
+  }
+  .buttons {
+    justify-content: center; /* Tombol jadi rata tengah di mobile */
+  }
+  .heroLogo {
+    margin-bottom: 2rem; /* Jarak antara logo dan teks */
+  }
+  /* Tidak ada perubahan durasi animasi di sini, tetap menggunakan 3s dari default */
+}
+
+/* Media query untuk tampilan desktop (layar lebih besar dari 996px) */
+@media (min-width: 997px) {
+  /* Docusaurus's lg breakpoint + 1px */
+  .heroBanner::before {
+    animation-duration: calc(
+      var(--scroll-duration) * 2
+    ); /* Perpanjang durasi untuk desktop agar animasi lebih lambat */
+  }
+}
+
+/* Keyframes untuk animasi scrolling diagonal dengan rotasi.
+   Pola akan bergerak dari Kiri Atas ke Kanan Bawah. */
+@keyframes scrollDiagonalFromTopRight {
+  0% {
+    /* Rotasi diterapkan bersamaan dengan translasi.
+       Sudut rotasi (misal -3deg) bisa disesuaikan.
+       translateX(0) dan translateY(0) adalah titik awal relatif terhadap ::before yang sudah diputar. */
+    transform: rotate(-15deg) translateX(0) translateY(0); /* translateY(0) untuk kejelasan */
+  }
+  100% {
+    /* Bergerak ke kiri (negatif X lokal) sejauh lebar satu 'tile' gambar (40% dari lebar ::before).
+       Karena elemen dirotasi -15deg, gerakan ini akan tampak diagonal (elemen ke Kiri-Atas, pola ke Kanan-Bawah).
+       translateY di-set ke 0 untuk memastikan loop yang mulus, karena hanya bergantung pada translateX dan background-size. */
+    transform: rotate(-15deg) translateX(-40%) translateY(0);
+  }
+}

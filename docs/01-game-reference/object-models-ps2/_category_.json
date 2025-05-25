@@ -1,0 +1,8 @@
+{
+  "label": "Object Models (PS2)",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "A detailed overview of the object models used in the PS2 version of the game, including their properties, methods, and interactions with other game elements."
+  }
+}

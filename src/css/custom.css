@@ -1,0 +1,222 @@
+/* src/css/custom.css */
+
+:root {
+  --ifm-color-primary: #0a2c4e; /* Biru Gelap Khas Bully (Contoh: Bullworth Navy) */
+  --ifm-color-primary-dark: #08233f;
+  --ifm-color-primary-darker: #061a30;
+  --ifm-color-primary-darkest: #041221;
+  --ifm-color-primary-light: #0c355d;
+  --ifm-color-primary-lighter: #0e3e6c;
+  --ifm-color-primary-lightest: #10477b;
+
+  /* Warna aksen kuning-oranye khas Bully */
+  --ifm-color-secondary: #ffb400; /* Kuning-Oranye (Contoh: Bullworth Gold) */
+  --ifm-color-secondary-dark: #e09d00;
+  --ifm-color-secondary-darker: #c28700;
+  --ifm-color-secondary-darkest: #a37100;
+  --ifm-color-secondary-light: #ffbe1f;
+  --ifm-color-secondary-lighter: #ffc83d;
+  --ifm-color-secondary-lightest: #ffd25c;
+
+  --ifm-background-color: #f4f6f8; /* Warna latar belakang umum yang sedikit off-white */
+
+  /* Kustomisasi Hero Section */
+  --ifm-hero-background-color: var(--ifm-color-primary);
+  --ifm-hero-text-color: #ffffff; /* Teks putih di atas latar biru gelap */
+
+  --ifm-font-color-base-inverse: var(--ifm-hero-text-color);
+
+  /* Kustomisasi Tombol CTA di Hero Section */
+  /* Menggunakan variabel --ifm-color-secondary untuk tombol CTA */
+
+  --white: #ffffff;
+}
+
+:root[data-theme='light'] {
+  --ifm-color-primary: var(--ifm-color-primary-lightest);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Dark Theme                                                                 */
+/* -------------------------------------------------------------------------- */
+
+:root[data-theme='dark'] {
+  /* Biru Gelap Khas Bully (Contoh: Bullworth Navy) */
+  /* --ifm-color-primary: #0a2c4e; */
+
+  --ifm-background-color: var(--ifm-color-primary-darker);
+
+  --ifm-navbar-background-color: var(--ifm-color-primary-lightest);
+
+  --ifm-font-color-base: white; /* Teks putih di atas latar belakang gelap */
+
+  --ifm-toc-border-color: white;
+
+  --ifm-menu-color: white;
+  --ifm-menu-color-active: var(--ifm-color-secondary);
+  --ifm-menu-color-background-hover: var(--ifm-color-primary-light);
+
+  --ifm-navbar-link-hover-color: var(--ifm-color-secondary);
+
+  --ifm-card-background-color: var(--ifm-color-primary);
+}
+
+/* -------------------------------------------------------------------------- */
+/* All                                                                        */
+/* -------------------------------------------------------------------------- */
+
+/* Theme color change transition */
+/* Lagging, XD */
+/* *,
+*::before,
+*::after {
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke;
+  transition-duration: 0.1s;
+} */
+
+/* -------------------------------------------------------------------------- */
+/* Hero                                                                       */
+/* -------------------------------------------------------------------------- */
+
+/* Pastikan tombol CTA di hero menggunakan warna sekunder yang telah didefinisikan */
+.heroBanner .button--secondary {
+  background-color: var(--ifm-color-secondary);
+  border-color: var(--ifm-color-secondary);
+  color: #000000; /* Teks hitam di atas tombol kuning-oranye agar kontras */
+}
+
+.heroBanner .button--secondary:hover {
+  background-color: var(
+    --ifm-color-secondary-dark
+  ); /* Warna hover sedikit lebih gelap */
+  border-color: var(--ifm-color-secondary-dark);
+  color: #000000;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Navbar                                                                     */
+/* -------------------------------------------------------------------------- */
+
+[data-theme='dark'] .navbar__link {
+  color: white;
+}
+
+/* [data-theme='dark'] .navbar__link--active, */
+[data-theme='dark'] .navbar__link:hover {
+  color: var(--ifm-color-secondary);
+}
+
+[data-theme='dark'] .navbar__link--active {
+  color: var(--ifm-color-secondary);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Breadcrumbs                                                                */
+/* -------------------------------------------------------------------------- */
+
+[data-theme='dark'] .breadcrumbs__item .breadcrumbs__link,
+[data-theme='dark'] .breadcrumbs__item--active .breadcrumbs__link {
+  /* background-color: var(--ifm-color-primary-light); */
+  color: var(--ifm-font-color-base);
+}
+
+/* [data-theme='dark'] .breadcrumbs__item:hover .breadcrumbs__link,
+[data-theme='dark'] .breadcrumbs__item--active:hover .breadcrumbs__link {
+  color: white;
+} */
+[data-theme='dark'] .breadcrumbs__item--active .breadcrumbs__link {
+  background-color: var(--ifm-color-primary-light);
+}
+
+[data-theme='dark'] .breadcrumbs__item .breadcrumbs__link:hover {
+  background-color: var(--ifm-color-primary-light);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Table of Contents                                                          */
+/* -------------------------------------------------------------------------- */
+
+[data-theme='dark'] .table-of-contents__link:hover,
+[data-theme='dark'] .table-of-contents__link--active {
+  color: var(--ifm-color-secondary);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Link                                                                       */
+/* -------------------------------------------------------------------------- */
+
+[data-theme='dark'] .markdown :not(pre) > a {
+  color: var(--ifm-color-secondary);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Pre                                                                        */
+/* -------------------------------------------------------------------------- */
+
+[data-theme='light'] pre {
+  background-color: var(--white) !important;
+  /* color: var(--ifm-font-color-base); */
+}
+
+/* -------------------------------------------------------------------------- */
+/* Card                                                                       */
+/* -------------------------------------------------------------------------- */
+
+[data-theme='dark'] .card:hover {
+  box-shadow: 0 3px 6px 0 rgb(255 180 0 / 20%);
+}
+
+[data-theme='dark'] .card:hover {
+  border-color: var(--ifm-color-secondary);
+  /* box-shadow: 0 3px 6px 0 rgb(0 0 0 / 20%); */
+  /* box-shadow: 0 3px 6px 0 rgb(255 180 0 / 20%); */
+}
+
+/* -------------------------------------------------------------------------- */
+/* Pagination                                                                 */
+/* -------------------------------------------------------------------------- */
+
+[data-theme='dark'] .pagination-nav__link .pagination-nav__label {
+  color: var(--ifm-color-secondary);
+}
+
+[data-theme='dark'] .pagination-nav__link:hover {
+  border-color: var(--ifm-color-secondary);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Edit this page                                                             */
+/* -------------------------------------------------------------------------- */
+
+[data-theme='dark'] .theme-doc-markdown-edit-link {
+  color: var(--ifm-color-secondary);
+}
+
+[data-theme='dark'] .theme-edit-this-page {
+  color: var(--ifm-color-secondary);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Footer                                                                     */
+/* -------------------------------------------------------------------------- */
+
+[data-theme='light'] .footer {
+  background-color: var(--ifm-color-emphasis-200);
+}
+
+[data-theme='dark'] .footer {
+  background-color: var(--ifm-color-primary-darkest);
+}
+
+[data-theme='dark'] .footer__link-item:hover {
+  color: var(--ifm-color-secondary-light);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Blog Page                                                                  */
+/* -------------------------------------------------------------------------- */
+
+:root[data-theme='dark'] {
+  --ifm-link-color: var(--ifm-color-secondary);
+}

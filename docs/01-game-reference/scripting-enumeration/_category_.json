@@ -1,0 +1,8 @@
+{
+  "label": "Scripting Enumeration",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Enumeration of all scripting functions and variables available in the game."
+  }
+}

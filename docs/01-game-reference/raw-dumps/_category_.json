@@ -1,0 +1,8 @@
+{
+  "label": "Raw Dumps",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "This section contains raw dumps of game data, which can be useful for developers and modders looking to understand the underlying mechanics and data structures of the game."
+  }
+}

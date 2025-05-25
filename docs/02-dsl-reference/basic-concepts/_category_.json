@@ -1,0 +1,8 @@
+{
+  "label": "Basic Concepts",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "This section covers the fundamental concepts of the DSL, including its syntax, structure, and basic operations. Understanding these concepts is essential for effectively using the DSL in your projects."
+  }
+}
