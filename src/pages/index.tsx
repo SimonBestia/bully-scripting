@@ -6,6 +6,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import BullyLogoImageUrl from '@site/static/img/bully-logo.png'; // eslint-disable-line
 import Layout from '@theme/Layout';
 import { inject } from '@vercel/analytics';
+import { injectSpeedInsights } from '@vercel/speed-insights';
 
 import styles from './index.module.css';
 
@@ -43,6 +44,7 @@ function HomepageHeader(): React.JSX.Element {
 
 export default function Home(): React.JSX.Element {
   inject(); // Inject Vercel Analytics
+  injectSpeedInsights(); // Inject Vercel Speed Insights
 
   let { siteConfig } = useDocusaurusContext();
   let description = (siteConfig.customFields as CustomFields)?.meta
