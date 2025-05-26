@@ -17,7 +17,8 @@ Config files in DSL are used to define various settings and behaviors for script
 Starting from DSL 10, configuration files for mods are no longer generated automatically. Instead, you need to create one manually to specify your files, set up the mod, define custom keys, and list any requirements. You can create a new file named either config.txt (legacy naming convention) or config.ini (new naming convention), and define your configurations within it.
 
 EXAMPLE:
-[ DSL Configuration ]
+
+DSL Configuration
 auto_start: true
 disable_scripts: false
 
@@ -41,7 +42,7 @@ scripts_file: main.lur
 world_file: MG_Biology.nft
 
 
-[Mod Configuration ]
+Mod Configuration
 
 vertical_position: top
 horizontal_position: right
