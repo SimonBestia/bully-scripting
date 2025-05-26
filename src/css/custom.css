@@ -220,3 +220,16 @@
 :root[data-theme='dark'] {
   --ifm-link-color: var(--ifm-color-secondary);
 }
+
+/* -------------------------------------------------------------------------- */
+/* Hidden Class                                                               */
+/* -------------------------------------------------------------------------- */
+/*
+  Mainly used to hide the sidebar items as too many items cause lag.
+  Type this in the markdown docs file:
+    sidebar_class_name: hidden
+*/
+
+.hidden {
+  display: none !important;
+}
