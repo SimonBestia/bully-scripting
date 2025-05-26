@@ -201,15 +201,154 @@ Here's the list of all 185 global functions that DSL provides.
 
 ## DSL 11
 
-:::note
-Todo...
-:::
+Not released yet.
 
 ## DSL 10
 
-:::note
-Todo...
-:::
+142 global functions were added in DSL 10.
+
+1. `AllObjects`
+1. `AllSyncEntities`
+1. `AllSyncEntityValues`
+1. `AllSyncPeds`
+1. `AllSyncPlayers`
+1. `AllSyncVehicles`
+1. `AllVehicles`
+1. `CameraIsWidescreen`
+1. `CameraGetRotation`
+1. `CameraGetXYZ`
+1. `CopyTimecycle`
+1. `CreateFolder`
+1. `CreateSyncDimension`
+1. `CreateSyncEntity`
+1. `CreateSyncPed`
+1. `CreateSyncVehicle`
+1. `CreateTimecycle`
+1. `DeleteSyncDimension`
+1. `DeleteSyncEntity`
+1. `DidPlayerUseLauncher`
+1. `FindFile`
+1. `FindFiles`
+1. `ForceActionNode`
+1. `ForceFacialNode`
+1. `ForceTaskNode`
+1. `GetControllerPed`
+1. `GetExtraTimecycle`
+1. `GetFrameCount`
+1. `GetHudTexture`
+1. `GetKeyCode`
+1. `GetNodeFromData`
+1. `GetPhysicsMult`
+1. `GetRawPersistentDataTable`
+1. `GetScreenCoords`
+1. `GetSimulationSpeed`
+1. `GetSyncActiveDimension`
+1. `GetSyncDimensionName`
+1. `GetSyncDimensionSpace`
+1. `GetSyncEntityArea`
+1. `GetSyncEntityDimension`
+1. `GetSyncEntityFromId`
+1. `GetSyncEntityId`
+1. `GetSyncEntityModel`
+1. `GetSyncEntityOwner`
+1. `GetSyncEntityPed`
+1. `GetSyncEntityPos`
+1. `GetSyncEntitySpace`
+1. `GetSyncEntityVehicle`
+1. `GetSyncMainDimension`
+1. `GetSyncPedVehicle`
+1. `GetSyncPlayerFromPed`
+1. `GetSyncPlayerPed`
+1. `GetSyncVehiclePassenger`
+1. `GetTimecycle`
+1. `GetVolumeSetting`
+1. `IsSyncActive`
+1. `IsSyncDimensionValid`
+1. `IsSyncEntityOwned`
+1. `IsSyncEntityReady`
+1. `IsSyncEntityValid`
+1. `IsSyncPedValid`
+1. `IsSyncVehicleValid`
+1. `LockSyncEntityOwner`
+1. `ObjectIsValid`
+1. `ObjectFaceHeading`
+1. `ObjectGetEntityFlag`
+1. `ObjectGetHeading`
+1. `ObjectGetModelId`
+1. `ObjectGetPosXYZ`
+1. `ObjectGetRotation`
+1. `ObjectSetEntityFlag`
+1. `ObjectSetPosXYZ`
+1. `ObjectSetRotation`
+1. `PedCanEnterVehicle`
+1. `PedGetActionNode`
+1. `PedGetActionNodeData`
+1. `PedGetActionTree`
+1. `PedGetControllerID`
+1. `PedGetFacialNode`
+1. `PedGetFacialNodeData`
+1. `PedGetPunishmentPoints`
+1. `PedGetSyncEntity`
+1. `PedGetTaskNode`
+1. `PedGetTaskNodeData`
+1. `PedIsDoingFacial`
+1. `PedMeDoingFacial`
+1. `PedMeDoingTask`
+1. `PedSetActionNodeSimple`
+1. `PedSetFacialNodeSimple`
+1. `PedSetTaskNodeSimple`
+1. `PlayerHasControl`
+1. `RegisterFunction`
+1. `RequireSync`
+1. `RestoreTimecycles`
+1. `SavePersistentDataTables`
+1. `SeasonGet`
+1. `SetAllTimecycles`
+1. `SetExtraTimecycle`
+1. `SetHelpText`
+1. `SetMinigameActive`
+1. `SetMissionActive`
+1. `SetSimulationSpeed`
+1. `SetStoryDisabled`
+1. `SetSyncActiveDimension`
+1. `SetSyncEntityDimension`
+1. `SetSyncEntityModel`
+1. `SetSyncEntityPos`
+1. `SetSyncPedVehicle`
+1. `SetSyncPlayerPed`
+1. `SetTimecycle`
+1. `SetVolumeSetting`
+1. `SoundPlayAmbientSpeechEventSpecific`
+1. `UnlockSyncEntityOwner`
+1. `VehicleGetColor`
+1. `VehicleGetColours`
+1. `VehicleGetPassenger`
+1. `VehicleGetRotation`
+1. `VehicleGetStatus`
+1. `VehicleGetSyncEntity`
+1. `VehicleSetPosSimple`
+1. `VehicleSetRotation`
+1. `VehicleUseHorn`
+1. `WasSyncEntityUpdated`
+1. `WeatherGetNext`
+1. `WeatherGetNow`
+1. `WeatherGetTransition`
+1. `WeatherTransition`
+1. `type2`
+1. `ptr(address)`
+1. `PedGetPointer`
+1. `VehicleGetPointer`
+1. `float`
+1. `double`
+1. `int8`
+1. `int16`
+1. `int32`
+1. `uint8`
+1. `uint16`
+1. `uint32`
+1. `GetString`
+1. `SetString`
+1. `ReplaceCode`
 
 ## DSL 9
 
