@@ -230,7 +230,7 @@ const config: Config = {
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.nightOwl,
-      additionalLanguages: ['lua'],
+      additionalLanguages: ['ini', 'lua'],
     },
   } satisfies Preset.ThemeConfig,
 };
