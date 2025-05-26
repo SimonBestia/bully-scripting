@@ -227,7 +227,11 @@ const config: Config = {
         `Copyright © ${new Date().getFullYear()} Bully Scripting` +
         ' Community. Made with ❤️ by community. Built with Docusaurus.',
     },
-    prism: { theme: prismThemes.github, darkTheme: prismThemes.dracula },
+    prism: {
+      theme: prismThemes.github,
+      darkTheme: prismThemes.nightOwl,
+      additionalLanguages: ['lua'],
+    },
   } satisfies Preset.ThemeConfig,
 };
 
