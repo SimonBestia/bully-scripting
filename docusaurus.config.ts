@@ -126,6 +126,16 @@ const config: Config = {
 
   themeConfig: {
     /* ---------------------------------------------------------------------- */
+    /* Algolia Doc Search                                                     */
+    /* ---------------------------------------------------------------------- */
+
+    algolia: {
+      apiKey: process.env.ALGOLIA_SEARCH_API_KEY,
+      appId: process.env.ALGOLIA_APP_ID,
+      indexName: process.env.ALGOLIA_INDEX_NAME,
+    },
+
+    /* ---------------------------------------------------------------------- */
     /* Color Mode                                                             */
     /* ---------------------------------------------------------------------- */
 
