@@ -249,7 +249,7 @@ const config: Config = {
   /* ------------------------------------------------------------------------ */
   // https://docusaurus.io/blog/releases/3.8#docusaurus-faster
 
-  future: { experimental_faster: true },
+  future: { experimental_faster: true, v4: true },
 };
 
 export default config;
