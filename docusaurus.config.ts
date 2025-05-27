@@ -243,6 +243,13 @@ const config: Config = {
       additionalLanguages: ['ini', 'lua'],
     },
   } satisfies Preset.ThemeConfig,
+
+  /* ------------------------------------------------------------------------ */
+  /* Docusaurus Faster                                                        */
+  /* ------------------------------------------------------------------------ */
+  // https://docusaurus.io/blog/releases/3.8#docusaurus-faster
+
+  future: { experimental_faster: true },
 };
 
 export default config;
