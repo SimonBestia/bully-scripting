@@ -29,20 +29,24 @@ const config: Config = {
     NODE_ENV: process.env.NODE_ENV,
   },
 
-  favicon:
-    process.env.NODE_ENV === 'production' ? 'img/icon.ico' : '../img/icon.ico',
+  favicon: 'img/icon.ico',
 
   /* ------------------------------------------------------------------------ */
   /* Production & Deployment                                                  */
   /* ------------------------------------------------------------------------ */
 
   // Production URL: https://bully-scripting.vercel.app
-  // Local Development URL: http://localhost:3000/bully-scripting/
-
+  // Local Development URL: http://localhost:3000
+  //
   // Fallback to localhost for local development if no specific URL is set.
   // Vercel provides VERCEL_URL which will be used for preview deployments.
   // For production, set SITE_URL in Vercel environment variables to your
   // canonical URL.
+  //
+  // VERCEL_URL: bully-scripting.vercel.app - DOES NOT include the protocol scheme `https://`.
+  // https://vercel.com/docs/environment-variables/system-environment-variables#VERCEL_URL
+  //
+  // SITE_URL: https://bully-scripting.vercel.app
   url:
     process.env.SITE_URL ||
     (process.env.VERCEL_URL
@@ -51,16 +55,14 @@ const config: Config = {
 
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  // baseUrl: '/',
   baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'RanggaBS', // Usually your GitHub org/user name.
+  organizationName: process.env.GITHUB_ORG_NAME || 'RanggaBS', // Usually your GitHub org/user name.
 
   // Usually your repo name.
-  projectName:
-    process.env.NODE_ENV === 'development' ? undefined : 'bully-scripting',
+  projectName: process.env.GITHUB_REPO_NAME || 'bully-scripting',
 
   trailingSlash: false, // 'domain.com/docs', not 'domain.com/docs/'
 
@@ -95,8 +97,9 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
 
           // This should point to your actual repository,
-          // e.g., 'https://github.com/RanggaBS/bully-scripting/tree/main/'
           // Using an environment variable SITE_EDIT_URL allows for flexibility.
+          //
+          // SITE_EDIT_URL: https://github.com/RanggaBS/bully-scripting/tree/main/
           editUrl:
             process.env.SITE_EDIT_URL ||
             'https://github.com/RanggaBS/bully-scripting/tree/main/',
