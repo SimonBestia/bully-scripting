@@ -183,8 +183,8 @@ const config: Config = {
         {
           title: 'Docs',
           items: [
-            { label: 'Tutorial', to: '/docs/intro' },
-            { label: 'Game Reference', to: '/docs/game-reference' },
+            { label: 'Introduction', to: '/docs' },
+            { label: 'Game Reference', to: '/docs/category/game-reference' },
             {
               label: 'Derpy Script Loader (DSL)',
               to: '/docs/category/dsl-reference',
