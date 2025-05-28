@@ -129,11 +129,14 @@ const config: Config = {
     /* ---------------------------------------------------------------------- */
     /* Algolia Doc Search                                                     */
     /* ---------------------------------------------------------------------- */
+    // Safe to expose, also to be used in development mode, local machine.
 
     algolia: {
-      apiKey: process.env.ALGOLIA_SEARCH_API_KEY,
-      appId: process.env.ALGOLIA_APP_ID,
-      indexName: process.env.ALGOLIA_INDEX_NAME,
+      appId: process.env.ALGOLIA_APP_ID || 'NLWNLJ2B6B',
+      apiKey:
+        process.env.ALGOLIA_SEARCH_API_KEY ||
+        '6503c96461d85eafb0d0c2da7c54771f',
+      indexName: process.env.ALGOLIA_INDEX_NAME || 'bully-scripting',
       contextualSearch: false,
     },
 
