@@ -11,9 +11,11 @@ const config: Config = {
   /* ------------------------------------------------------------------------ */
 
   title: 'Bully Scripting Docs',
+
   tagline:
     'The Complete Guide to Scripting Bully: Scholarship Edition with Lua' +
     ' Programming Language',
+
   customFields: {
     // SEO stuff...
     meta: {
@@ -26,6 +28,7 @@ const config: Config = {
     // Checks whether currently in 'production' or 'development' environment
     NODE_ENV: process.env.NODE_ENV,
   },
+
   favicon:
     process.env.NODE_ENV === 'production' ? 'img/icon.ico' : '../img/icon.ico',
 
@@ -49,17 +52,15 @@ const config: Config = {
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   // baseUrl: '/',
-  baseUrl:
-    // process.env.NODE_ENV === 'production'
-    //   ? '/bully-scripting/'
-    //   : process.env.BASE_URL || '/',
-    '/',
+  baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'RanggaBS', // Usually your GitHub org/user name.
+
+  // Usually your repo name.
   projectName:
-    process.env.NODE_ENV === 'development' ? undefined : 'bully-scripting', // Usually your repo name.
+    process.env.NODE_ENV === 'development' ? undefined : 'bully-scripting',
 
   trailingSlash: false, // 'domain.com/docs', not 'domain.com/docs/'
 
@@ -153,10 +154,7 @@ const config: Config = {
     // Meta image
     // You can configure a default image that will be used for your meta tag,
     // in particular og:image and twitter:image.
-    //
-    // Replace with your project's social card
     image: 'img/social-card.png',
-    // image: 'img/bully-logo.png',
 
     /* ---------------------------------------------------------------------- */
     /* Navbar                                                                 */
@@ -164,21 +162,8 @@ const config: Config = {
 
     navbar: {
       title: 'Bully Scripting Reference',
-      logo: {
-        alt: 'Bully game logo',
-        src:
-          // process.env.NODE_ENV === 'production'
-          //   ? 'img/BULLY-B-letter.png'
-          //   : '../img/BULLY-B-letter.png',
-          '/img/BULLY-B-letter.png',
-      },
+      logo: { alt: 'Bully game logo', src: '/img/BULLY-B-letter.png' },
       items: [
-        // {
-        //   type: 'docSidebar',
-        //   sidebarId: 'tutorialSidebar',
-        //   position: 'left',
-        //   label: 'Tutorial',
-        // },
         { label: 'Docs', position: 'left', to: '/docs' },
         { label: 'Blog', position: 'left', to: '/blog' },
         {
