@@ -87,9 +87,8 @@
 }
 
 .heroBanner .button--secondary:hover {
-  background-color: var(
-    --ifm-color-secondary-dark
-  ); /* Warna hover sedikit lebih gelap */
+  /* Warna hover sedikit lebih gelap */
+  background-color: var(--ifm-color-secondary-dark);
   border-color: var(--ifm-color-secondary-dark);
   color: #000000;
 }
@@ -232,4 +231,19 @@
 
 .hidden {
   display: none !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Code Block Line Highlighting                                               */
+/* -------------------------------------------------------------------------- */
+/* https://docusaurus.io/docs/markdown-features/code-blocks#highlighting-with-comments */
+
+:root {
+  --docusaurus-highlighted-code-line-bg: rgb(211, 215, 226);
+}
+
+/* If you have a different syntax highlighting theme for dark mode. */
+[data-theme='dark'] {
+  /* Color which works with dark mode syntax highlighting theme */
+  --docusaurus-highlighted-code-line-bg: rgb(1, 39, 70);
 }
