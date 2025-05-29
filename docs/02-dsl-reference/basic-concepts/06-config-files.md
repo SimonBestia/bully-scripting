@@ -27,7 +27,7 @@ require_dependency: MyOtherMod
 require_name: MyMod
 
 main_script: main.lua
-init_script: mnit.lua
+init_script: init.lua
 pre_init_script: pre-init.lua
 
 allow_on_server: true
