@@ -8,7 +8,7 @@ sidebar_class_name: hidden
 ## Description
 
 Return all the peds in an area. Use a big number (like 9999999) to get all peds in the world.
-Since this function can return many results, it is smart to wrap the call in a table (like { PedFindInAreaXYZ(0,0,0,9999999)}).
+Since this function can return many results, it is smart to wrap the call in a table (like `{ PedFindInAreaXYZ(0,0,0,9999999)}`).
 If you do that, the table will be full of peds (except the first result, it is not a ped).
 
 ```lua
