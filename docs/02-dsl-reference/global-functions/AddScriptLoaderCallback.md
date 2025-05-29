@@ -6,8 +6,7 @@ sidebar_class_name: hidden
 # AddScriptLoaderCallback
 
 ## Description
-This function is used to retrieve the function environment from native scripts and is typically utilized for hooking or replacing functions in there. This function has been **deprecated** since DSL version 4 as it has been superseded by the **NativeScriptLoaded** event (see RegisterLocalEventHandler). However, it remains accessible for backward compatibility with legacy scripts.
-...
+This function is used to retrieve the function environment from native scripts and is typically utilized for hooking or replacing functions in there. This function has been **deprecated** since DSL version 4 as it has been superseded by the **NativeScriptLoaded** event in RegisterLocalEventHandler function. However, it remains accessible for backward compatibility with legacy scripts.
 
 ```lua
 function AddScriptLoaderCallback(callback) --[[ ... ]] end
@@ -17,13 +16,9 @@ function AddScriptLoaderCallback(callback) --[[ ... ]] end
 
 - `callback`: _`fucntion(name, env)`_
 
-...
-
 ## Return Values
 
 none.
-
-...
 
 ## Example
 
@@ -52,6 +47,4 @@ AddScriptLoaderCallback(function(Name, Env)
   end
 end)
 ```
-
-...
 
