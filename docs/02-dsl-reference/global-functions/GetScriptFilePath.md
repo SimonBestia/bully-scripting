@@ -7,6 +7,8 @@ sidebar_class_name: hidden
 
 > **_This function was added in DSL 8_**
 
+## Description
+
 <!--
 ---Get a full path given a relative path. Usually not needed, as most DSL functions expect the relative path. If no `filename` is given, then it's just as if `""` was used. A `fullpath` in this context is not a full system path, but rather just a path that is relative to `Bully.exe` rather than the running collection.
 ---@param filename? string
@@ -14,15 +16,19 @@ sidebar_class_name: hidden
 function GetScriptFilePath(filename) end
  -->
 
-## Description
-
 Get a full path given a relative path.
 
 Usually not needed, as most DSL functions expect the relative path.
 
-If no `filename` is given, then it's just as if `""` was used.
+`filename` is a relative path to the file.
 
 A `fullpath` in this context is not a full system path, but rather just a path that is relative to `Bully.exe` rather than the running collection.
+
+:::warning
+The parameter `filename` is required in newer version of DSL, will throw an error if not provided.
+
+Previously, this was optional.
+:::
 
 ```lua
 function GetScriptFilePath(filename) --[[ ... ]] end
@@ -30,23 +36,13 @@ function GetScriptFilePath(filename) --[[ ... ]] end
 
 ## Parameters
 
-- `filename?`: _`string`_ - (Optional) The relative path to the file. If not provided, it defaults to an empty string.
+- `filename`: _`string`_ - The relative path to the file. If not provided.
 
 ## Return Values
 
 - `fullpath`: _`string`_ - The full path to the file, relative to `Bully.exe`.
 
 ## Example
-
-:::danger
-
-# TODO
-
-Different behavior on DSL 10! It will return the full path relative to the collection root, not the script root.
-
-The parameter `filename` is also required in DSL 10, and it will throw an error if not provided.
-
-:::
 
 ### Standalone Collection
 
