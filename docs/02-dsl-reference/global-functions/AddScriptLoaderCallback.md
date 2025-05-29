@@ -14,7 +14,7 @@ function AddScriptLoaderCallback(callback) --[[ ... ]] end
 
 ## Parameters
 
-- `callback`: _`fucntion(name, env)`_
+- `callback`: _`function(name, env)`_
 
 ## Return Values
 
