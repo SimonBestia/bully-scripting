@@ -31,7 +31,7 @@ AddScriptLoaderCallback(function(Name, Env)
     -- Trigger auto-pass: hook into a function that is called after the minigame has started
     Env.ClassGeographyInvalidOperation = function()
       if not Passed then
-        ClassGeographySuccess() -- -- only called once
+        ClassGeographySuccess() -- only called once
         Passed = true
       end
       return ClassGeographyInvalidOperation()
