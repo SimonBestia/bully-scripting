@@ -1,29 +1,40 @@
 ---
-description: Returns if a key was pressed, but only once per time the key is pressed.
+description: Check if a keyboard key was just pressed.
 sidebar_class_name: hidden
 ---
 
 # IsKeyBeingPressed
 
+> **_This function was added in DSL 1_**
+
 ## Description
 
-Returns whether a key was pressed, but only triggers once per individual key press. This prevents repeated triggering while the key is held down.
+Check if a keyboard key was just pressed.
+
+This should be a string representing the key, such as `'W'`, `'A'`, `'S'`, `'D'`, etc. The key names are **case-sensitive**.
 
 ```lua
-function IsKeyBeingPressed(vk) --[[ ... ]] end
+function IsKeyBeingPressed(key) --[[ ... ]] end
 ```
 
 ## Parameters
 
-- `vk`: _`integer/string`_ - A virtual key code or string, following the same rules described by [**IsKeyPressed**](https://bully-scripting.vercel.app/docs/dsl-reference/global-functions/IsKeyPressed).
+- `key`: _`string`_ - The name of the key to check.
 
 ## Return Values
 
-- `state`: _`boolean`_ - Returns **true** if the key was pressed.
-
-Will not return true again until the key is released and pressed again.
+- `justPressed`: _`boolean`_ - Returns _`true`_ if the key was just pressed, otherwise _`false`_.
 
 ## Example
 
-None.
+```lua
+if IsKeyBeingPressed('W') then
+  print('W key was just pressed!')
+end
+```
 
+## See Also
+
+- DSL
+  - [`IsKeyPressed`](./IsKeyPressed) - Check if a key is being held down.
+  - [`IsKeyBeingReleased`](./IsKeyBeingReleased) - Check if a key was just released.

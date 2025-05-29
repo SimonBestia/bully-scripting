@@ -1,5 +1,5 @@
 ---
-description: Starts a new thread using the specified function name.
+description: Create a new thread in DSL.
 sidebar_class_name: hidden
 ---
 
@@ -7,40 +7,46 @@ sidebar_class_name: hidden
 
 ## Description
 
-Creates a new thread using the specified function name as the entry point. The original [**CreateThread**](https://bully-scripting.vercel.app/docs/game-reference/global-functions/CreateThread) can only take a string, while DSL's version supports both a string and a function directly. The original can't be passed an arbitrary number of arguments, but DSL's can. 
-The normal one is limited to the game's maximum thread count, DSL's has no arbitrary limitation. There's also the fact that a DSL thread it different internally, and that it's stored in the DSL script object rather than the game script object of course.
-If a DSL script is not running however, the original version is used.
+> **_This function was added in DSL 1_**
+
+:::info
+This function replaces the existing [`CreateThread`](../../game-reference/global-functions/CreateThread).
+:::
+
+If DSL is not running or [`UseBaseGameScriptFunctions`](./UseBaseGameScriptFunctions) was called with _`true`_, the original function is used. Otherwise a **`GAME`** thread is created and added to the current script. These threads run directly after the base game's.
+
+When creating a DSL script, `func` can be a string to refer to a function in the current script's environment. In this case, the name of the thread is also preserved to be shown in console messages or returned with [`GetThreadName`](./GetThreadName).
+
+Any extra arguments (`...`) are passed to the thread function when the thread starts.
 
 ```lua
-function CreateThread(funcName) --[[ ... ]] end
+function CreateThread(func, ...) --[[ ... ]] end
 ```
 
 ## Parameters
 
-- `funcName`: _`string`_ - The name of the function to run in the new thread.
+- `func` - _`function`_ - The function to run in the thread. If a string is provided, it refers to a function in the current script's environment.
+- `...`: _`any`_ - Optional. Additional arguments to pass to the thread function when it starts. These can be any Lua values, such as numbers, strings, tables, etc.
 
 ## Return Values
 
-None.
+- `thread` - _`thread`_ - The thread that was created. This can be used to control the thread, such as pausing or stopping it.
 
 ## Example
 
 ```lua
-function main()  
-    -- DSL CreateThread arguments
-    MyThread = CreateThread("ThreadWithArgs", "Hello", 42, true)
-    
-end
-
-function ThreadWithArgs(message, number, flag)
-    while true do
-        print("Args: " .. message .. ", " .. number .. ", " .. tostring(flag))
-        Wait(1000)
-    end
-end
+CreateThread(function()
+  print("This is a thread running in DSL!")
+end)
 ```
 
 ## See Also
 
+- DSL
+
+  - [`UseBaseGameScriptFunctions`](./UseBaseGameScriptFunctions)
+  - [`GetThreadName`](./GetThreadName)
+
 - Game's Native
-  - [`CreateThread`](https://bully-scripting.vercel.app/docs/game-reference/global-functions/CreateThread)
+
+  - [`CreateThread`](../../game-reference/global-functions/CreateThread)

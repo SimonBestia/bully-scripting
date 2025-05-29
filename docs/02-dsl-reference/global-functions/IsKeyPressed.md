@@ -1,30 +1,38 @@
 ---
-description: Returns if a key is currently pressed.
+description: Check if a keyboard key is currently pressed.
 sidebar_class_name: hidden
 ---
 
 # IsKeyPressed
 
+> **_This function was added in DSL 1_**
+
 ## Description
 
-Checks if a key is currently being pressed. You can provide a virtual key code or a string representation of the key. Also returns whether this is a new key press, using the same logic as [**IsKeyBeingPressed**](https://bully-scripting.vercel.app/docs/dsl-reference/global-functions/IsKeyBeingPressed).
+Check if a keyboard key is currently pressed.
 
 ```lua
-function IsKeyPressed(vk) --[[ ... ]] end
+function IsKeyPressed(key) --[[ ... ]] end
 ```
 
 ## Parameters
 
-- `vk`: _`integer/string`_ - A virtual key code as an integer, OR a string. You can find key codes [**here**](https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes).
-
-You can use any constant VK_* value (e.g. "VK_SPACE"), or a single character string like "W" or "1".
+- `key`: _`string`_ - The name of the key to check.
 
 ## Return Values
 
-- `state`: _`boolean`_ - true if the key is currently being held down.
-- `state`: _`boolean`_ - true if this is a new key press (same as [**IsKeyBeingPressed**](https://bully-scripting.vercel.app/docs/dsl-reference/global-functions/IsKeyBeingPressed)).
+- `pressed`: _`boolean`_ - Returns _`true`_ if the key is currently pressed, otherwise _`false`_.
 
 ## Example
 
-None.
+```lua
+if IsKeyPressed('W') then
+  print('W key is currently pressed!')
+end
+```
 
+## See Also
+
+- DSL
+  - [`IsKeyBeingPressed`](./IsKeyBeingPressed) - Check if a key was just pressed.
+  - [`IsKeyBeingReleased`](./IsKeyBeingReleased) - Check if a key was just released.
