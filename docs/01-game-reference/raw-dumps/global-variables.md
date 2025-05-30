@@ -1,3 +1,7 @@
+---
+description: A complete list of all global variables & functions that are created during the game's initialization process, including those created by Lua scripts.
+---
+
 # Global Variables
 
 1798 global variables are created during the game's initialization process, 241 of them being created later by Lua scripts or by the script manager system. Over 99% of these variables are functions, so function and non-function variables will be divided into seperate sections for convenience. All lists are sorted with regards to case, so lowercase names will be on the bottom.
