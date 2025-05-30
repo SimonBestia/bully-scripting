@@ -1,5 +1,7 @@
 ---
+slug: .
 sidebar_position: 1
+title: About Game's Global Function
 pagination_label: About Game's Global Function
 sidebar_label: About
 description: Documentation about the global functions created by the game during initialization.
