@@ -1,11 +1,11 @@
 ---
-sidebar_position: 1
-pagination_label: 'All Global Functions'
-sidebar_label: "All Game's Global Functions"
-description: 'A comprehensive list of all global functions available in the game.'
+sidebar_position: 2
+pagination_label: All Global Functions
+sidebar_label: All Game's Global Functions
+description: A comprehensive list of all global functions available in the game.
 ---
 
-# Game's Global Native Functions
+# Game's Native Global Functions
 
 Here's all the 1732 global functions provided by the game.
 
