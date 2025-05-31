@@ -232,7 +232,7 @@ const config: Config = {
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.nightOwl,
-      additionalLanguages: ['ini', 'lua'],
+      additionalLanguages: ['bash', 'ini', 'lua', 'markdown'],
     },
   } satisfies Preset.ThemeConfig,
 
