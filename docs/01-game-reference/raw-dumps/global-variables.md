@@ -6,9 +6,9 @@ description: A complete list of all global variables & functions that are create
 
 1798 global variables are created during the game's initialization process, 241 of them being created later by Lua scripts or by the script manager system. Over 99% of these variables are functions, so function and non-function variables will be divided into seperate sections for convenience. All lists are sorted with regards to case, so lowercase names will be on the bottom.
 
-- [1798 variables](./raw-dumps/global-variables#complete-dump---after-initialization) are defined in total by the end of the first script update.
-- Immediately after initializing Lua (before `main.lur`) there are [1543 functions](./raw-dumps/global-variables#lua-functions---after-initialization) and [14 other variables](./raw-dumps/global-variables#lua-variables---after-initialization).
-- After one script update, there are an additional [226 functions](./raw-dumps/global-variables#lua-functions---after-script-update) and [16 other variables](./raw-dumps/global-variables#lua-variables---after-script-update).
+- [1798 variables](./global-variables#complete-dump---after-initialization) are defined in total by the end of the first script update.
+- Immediately after initializing Lua (before `main.lur`) there are [1543 functions](./global-variables#lua-functions---after-initialization) and [14 other variables](./global-variables#lua-variables---after-initialization).
+- After one script update, there are an additional [226 functions](./global-variables#lua-functions---after-script-update) and [16 other variables](./global-variables#lua-variables---after-script-update).
 
 ## Complete Dump - After Initialization
 
